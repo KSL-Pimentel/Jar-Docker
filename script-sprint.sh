@@ -17,7 +17,7 @@ if [ $? = 0 ]; #se retorno for igual a 0
 			cd project-easy/target
 		else
 			git clone https://github.com/KSL-Pimentel/Jar-Docker.git
-			cd jar-individual-bp/project-easy/target
+			cd jar-individual/project-easy/target
 		fi
 
 		java -jar jar-individual-1.0-SNAPSHOT-jar-with-dependencies.jar
