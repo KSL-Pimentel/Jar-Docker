@@ -34,8 +34,8 @@ public class JarIndividual {
         //System.out.println(cpu.usoCpu());
         
         do {
-            System.out.println("Escolha uma opção.");
-            System.out.println("1 SQL / 2 MySql / 0 Encerrar");
+            System.out.println("Escolha a opção que deseja.");
+            System.out.println("1 - Insert SQL / 2 - Select SQL / 3 - Insert Local / 0 - Encerrar");
             escolha = leitor.nextInt();
             
             switch (escolha) {
@@ -45,7 +45,33 @@ public class JarIndividual {
                 break;
             case 1:
                 System.out.println("-".repeat(30));
-                System.out.println("Teste Sql pela Azure");
+                System.out.println("Insert SQL pela Azure");
+                
+                System.out.println("Nome:");
+                String inNome = leitor2.nextLine();
+
+                System.out.println("Email:");
+                String inEmail = leitor2.nextLine();
+
+                System.out.println("Senha:");
+                String inSenha = leitor2.nextLine();
+                
+                System.out.println("Cargo:");
+                String inCargo = leitor2.nextLine();
+                
+                System.out.println("ID Gestor:");
+                Integer idGestor = leitor2.nextInt();
+                
+                System.out.println("ID Empresa:");
+                Integer idEmpresa = leitor2.nextInt();
+
+                conexaoBanco.insertIntoUsuario(inNome, inEmail, inSenha, inCargo, idGestor, idEmpresa);
+
+                break;
+                
+            case 2:
+                System.out.println("-".repeat(30));
+                System.out.println("Select SQL pela Azure");
 
                 System.out.println("email");
                 String email = leitor2.nextLine();
@@ -56,21 +82,36 @@ public class JarIndividual {
                 select.selectAndInsert(email, senha);
                 break;
                 
-            case 2:
+            case 3:
                 System.out.println("-".repeat(30));
-                System.out.println("Teste Sql Local");
+                System.out.println("Insert MySQL Local");
+                
+                System.out.println("Nome:");
+                String nomeLocal = leitor2.nextLine();
+                
+                System.out.println("Sobrenome:");
+                String sobrenomeLocal = leitor2.nextLine();
 
-                System.out.println("email");
+                System.out.println("Email:");
                 String emailLocal = leitor2.nextLine();
 
-                System.out.println("senha");
+                System.out.println("Senha:");
                 String senhaLocal = leitor2.nextLine();
+                
+                System.out.println("Cargo:");
+                String cargoLocal = leitor2.nextLine();
+                
+                System.out.println("ID Gestor:");
+                Integer gestorLocal = leitor2.nextInt();
+                
+                System.out.println("ID Empresa:");
+                Integer empresaLocal = leitor2.nextInt();
 
-                //select.selectAndInsertLocal(emailLocal, senhaLocal);
+                conexaoBancoLocal.insertIntoBancoLocal(nomeLocal, sobrenomeLocal, emailLocal, senhaLocal, cargoLocal, gestorLocal, empresaLocal);
                 break;
                 
             default:
-                System.out.println("Opção inválida. Selecione 1 ou 2.");
+                System.out.println("Opção inválida. Selecione 1, 2, 3 ou 4.");
                 break;
                 
             }   

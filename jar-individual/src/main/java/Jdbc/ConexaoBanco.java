@@ -36,5 +36,10 @@ public class ConexaoBanco {
         connection.update(sql, idUser, idEmpresa);
     }
 
+    public void insertIntoUsuario(String inNome, String inEmail, String inSenha, String inCargo, Integer idGestor, Integer idEmpresa) {
+        String sql = "INSERT INTO Usuario (nome, email, senha, cargo, fkGestor, fk_empresa) VALUES (?, ?, ?, ?, ?, ?)";
+        
+        connection.update(sql, inNome, inEmail, inSenha, inCargo, idGestor, idEmpresa);
+    }
     
 }
