@@ -36,10 +36,10 @@ public class ConexaoBanco {
         connection.update(sql, idUser, idEmpresa);
     }
 
-    public void insertIntoUsuario(String inNome, String inEmail, String inSenha, String inCargo, Integer idGestor, Integer idEmpresa) {
-        String sql = "INSERT INTO Usuario (nome, email, senha, cargo, fkGestor, fk_empresa) VALUES (?, ?, ?, ?, ?, ?)";
+    public void insertIntoUsuario(String inNome, String inTelefone, String inEmail, String inSenha, String inCargo, Integer inPid, Integer pidGestor, Integer idEmpresa) {
+        String sql = "INSERT INTO Usuario (nome, telefone, email, senha, cargo, pid, pid_gestor, id_empresa) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         
-        connection.update(sql, inNome, inEmail, inSenha, inCargo, idGestor, idEmpresa);
+        connection.update(sql, inNome, inTelefone, inEmail, inSenha, inCargo, inPid, pidGestor, idEmpresa);
     }
     
 }

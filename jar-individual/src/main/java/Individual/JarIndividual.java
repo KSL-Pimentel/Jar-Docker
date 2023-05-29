@@ -49,6 +49,9 @@ public class JarIndividual {
                 
                 System.out.println("Nome:");
                 String inNome = leitor2.nextLine();
+                
+                System.out.println("Telefone:");
+                String inTelefone = leitor2.nextLine();
 
                 System.out.println("Email:");
                 String inEmail = leitor2.nextLine();
@@ -59,13 +62,16 @@ public class JarIndividual {
                 System.out.println("Cargo:");
                 String inCargo = leitor2.nextLine();
                 
-                System.out.println("ID Gestor:");
-                Integer idGestor = leitor2.nextInt();
+                System.out.println("PID:");
+                Integer inPid = leitor2.nextInt();
+                
+                System.out.println("PID Gestor:");
+                Integer pidGestor = leitor2.nextInt();
                 
                 System.out.println("ID Empresa:");
                 Integer idEmpresa = leitor2.nextInt();
 
-                conexaoBanco.insertIntoUsuario(inNome, inEmail, inSenha, inCargo, idGestor, idEmpresa);
+                conexaoBanco.insertIntoUsuario(inNome, inTelefone, inEmail, inSenha, inCargo, inPid, pidGestor, idEmpresa);
 
                 break;
                 
